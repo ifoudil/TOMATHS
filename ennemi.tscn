@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://benyr0ktbhf0s"]
+
+[ext_resource type="Script" path="res://ennemi.gd" id="1_boev5"]
+[ext_resource type="Texture2D" uid="uid://cmvt1bny7fak7" path="res://icon.svg" id="1_qt346"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raqvg"]
+size = Vector2(126, 128)
+
+[node name="Ennemi" type="CharacterBody2D"]
+script = ExtResource("1_boev5")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_qt346")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_raqvg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -47.0
+offset_top = -88.0
+offset_right = 45.0
+offset_bottom = -65.0
+text = "Question ici"

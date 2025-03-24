@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1742805444
+ennemi.gd::GDScript::-1::1742804278::0::1::::<>CharacterBody2D<>::
+ennemi.tscn::PackedScene::2695501864767474976::1742805216::0::1::::<><>::res://ennemi.gd<>uid://cmvt1bny7fak7::::res://icon.svg
+icon.svg::CompressedTexture2D::5659659551121153500::1742801517::1742805446::1::::<><>::
+jeu.gd::GDScript::-1::1742805014::0::1::::<>Node2D<>::
+jeu.tscn::PackedScene::2210433418655910052::1742805216::0::1::::<><>::res://jeu.gd<>uid://cgxn8omlio83c::::res://tomate_main.tscn
+README.md::TextFile::-1::1742805400::0::1::::<><>::
+tomate.png::CompressedTexture2D::504563219466235883::1742801652::1742805446::1::::<><>::
+tomate_main.tscn::PackedScene::5242304124038221582::1742805215::0::1::::<><>::uid://hgoc2m4cr5ql::::res://tomate.png
