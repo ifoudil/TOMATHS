@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hgoc2m4cr5ql"
-path="res://.godot/imported/tomate.png-4ab0b4980f3411c43912be9bf9f51977.ctex"
+path="res://.godot/imported/tomate.png-06b5624e243d97e5f66154799fa65c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tomate.png"
-dest_files=["res://.godot/imported/tomate.png-4ab0b4980f3411c43912be9bf9f51977.ctex"]
+source_file="res://Sprites/tomate.png"
+dest_files=["res://.godot/imported/tomate.png-06b5624e243d97e5f66154799fa65c1c.ctex"]
 
 [params]
 

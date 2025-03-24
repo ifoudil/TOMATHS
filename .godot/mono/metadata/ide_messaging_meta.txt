@@ -1,0 +1,2 @@
+﻿58500
+C:/Godot_stable_mono/Godot_v4.2.2-stable_mono_win64.exe

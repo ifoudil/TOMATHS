@@ -1,6 +1,6 @@
 extends Node2D
 
-const OBJET_ENNEMI = preload("res://ennemi.tscn")
+const OBJET_ENNEMI = preload("res://Characters_scenes/ennemi.tscn")
 
 func _ready():
 	apparaitre_ennemi()

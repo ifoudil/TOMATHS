@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://6q0rr4ru0lei"]
 
-[ext_resource type="Script" path="res://jeu.gd" id="1_4aqij"]
-[ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://tomate_main.tscn" id="1_pcqhc"]
+[ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
+[ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlyku"]
 _data = {
