@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgxn8omlio83c"]
+[gd_scene load_steps=5 format=3 uid="uid://cgxn8omlio83c"]
 
+[ext_resource type="Script" path="res://Scripts/tomate_main.gd" id="1_hkfqx"]
 [ext_resource type="Texture2D" uid="uid://hgoc2m4cr5ql" path="res://Sprites/tomate.png" id="1_yvhrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4ljh"]
@@ -9,6 +10,7 @@ radius = 40.1995
 radius = 75.0
 
 [node name="TomateMain" type="CharacterBody2D"]
+script = ExtResource("1_hkfqx")
 
 [node name="Tomate" type="Sprite2D" parent="."]
 position = Vector2(-7.62939e-06, 0)
@@ -20,6 +22,7 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_h4ljh")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_t81bh")

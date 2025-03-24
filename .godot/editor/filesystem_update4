@@ -1,5 +1,6 @@
-res://ennemi.tscn
 res://jeu.tscn
 res://Characters_scenes/ennemi.tscn
 res://Characters_scenes/tomate_main.tscn
+res://Scripts/ennemi.gd
+res://Scripts/tomate_main.gd
 res://Scripts/jeu.gd
