@@ -28,4 +28,13 @@ unique_name_in_owner = true
 shape = SubResource("CircleShape2D_t81bh")
 debug_color = Color(0.772826, 0.28719, 0.840336, 0.42)
 
+[node name="BarreDeVie" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -99.0
+offset_top = -88.0
+offset_right = 101.0
+offset_bottom = -61.0
+max_value = 10.0
+value = 10.0
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
