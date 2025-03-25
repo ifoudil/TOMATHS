@@ -2,4 +2,3 @@ res://jeu.tscn
 res://Characters_scenes/tomate_main.tscn
 res://Characters_scenes/ennemi.tscn
 res://Scripts/tomate_main.gd
-res://Scripts/ennemi.gd
