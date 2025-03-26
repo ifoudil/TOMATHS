@@ -9,3 +9,9 @@ func _physics_process(delta):
 
 func die():
 	queue_free()
+
+func setQuestion(): #on pourra lui passer la question en parametre apres
+	%Question.text = str(randi() % 10) #entre 0 et 9
+	
+func getReponse():
+	return %Question.text

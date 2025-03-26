@@ -15,7 +15,8 @@ texture = ExtResource("2_ulini")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_raqvg")
 
-[node name="Label" type="Label" parent="."]
+[node name="Question" type="Label" parent="."]
+unique_name_in_owner = true
 offset_left = -47.0
 offset_top = -88.0
 offset_right = 45.0

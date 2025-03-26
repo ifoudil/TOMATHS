@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6gahloa0mpyp"]
+
+[ext_resource type="Script" path="res://Scripts/encadréréponse.gd" id="1_3nhfi"]
+
+[node name="EncadreReponse" type="LineEdit"]
+offset_right = 344.0
+offset_bottom = 48.0
+placeholder_text = "Votre réponse ici"
+script = ExtResource("1_3nhfi")
