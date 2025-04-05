@@ -12,7 +12,7 @@ var text_file_path = "res://Questions/derivees.txt"
 
 func _ready() : 
 	var text_content = get_text_file_content(text_file_path) #en gros faut lire depuis le fichier pour remplir le dictionnaire (et donc vider celui qu'il y a la)
-	print(text_content)
+	print(text_content) # mais du coup je l'ai pas fait pr l'instant quoi
 	
 
 func get_text_file_content(filePath):
