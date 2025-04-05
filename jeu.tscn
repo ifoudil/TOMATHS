@@ -36,6 +36,7 @@ position = Vector2(-102, -140)
 rotation = -0.00592586
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]

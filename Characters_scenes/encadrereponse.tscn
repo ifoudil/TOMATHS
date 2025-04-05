@@ -5,5 +5,14 @@
 [node name="EncadreReponse" type="LineEdit"]
 offset_right = 344.0
 offset_bottom = 48.0
-placeholder_text = "Votre réponse ici"
+focus_mode = 0
+placeholder_text = "..."
 script = ExtResource("1_3nhfi")
+
+[node name="PrevueNombre" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 170.0
+offset_top = 67.0
+offset_right = 210.0
+offset_bottom = 107.0
