@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://benyr0ktbhf0s"]
+
+[ext_resource type="Script" path="res://Scripts/ennemi.gd" id="1_dau13"]
+[ext_resource type="Texture2D" uid="uid://cmvt1bny7fak7" path="res://Sprites/icon.svg" id="2_ulini"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raqvg"]
+size = Vector2(126, 128)
+
+[node name="Ennemi" type="CharacterBody2D"]
+script = ExtResource("1_dau13")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_ulini")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_raqvg")
+
+[node name="Question" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -47.0
+offset_top = -88.0
+offset_right = 45.0
+offset_bottom = -65.0
+text = "Question ici"

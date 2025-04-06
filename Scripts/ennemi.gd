@@ -5,11 +5,12 @@ extends CharacterBody2D
 const VITESSE_ENNEMI = 50
 
 var questRep = {}
-var text_file_path = "res://Questions/derivees.txt" 
+var text_file_path = "res://Questions/tablesMultiplication.txt"
 
 
 func _ready() : 
 	questRep = creer_dictionnaire(text_file_path)
+	print(questRep)
 	setQuestion()
 
 
@@ -30,7 +31,7 @@ func creer_dictionnaire(chemin_fichier):
 			if caractere != ',':
 				clef+=caractere
 		else :
-			if caractere != '\n':
+			if caractere != '\n' && caractere != '\r':
 				valeur+=caractere
 		if caractere == ",":
 			dictionnaire_remplir[clef] = ""
@@ -51,15 +52,12 @@ func _physics_process(delta):
 func die():
 	queue_free()
 
-
-func setQuestion(): #on pourra lui passer la question en parametre apres
-	for i in questRep: #pire manière possible de selectionner une valeur aléatoire
-		if randi() % 10 <=2:
-			%Question.text=i;
-			break;
-		else :
-			%Question.text=i;
-		
+func pick_random(dictionary: Dictionary) -> Variant:
+	var random_key = dictionary.keys().pick_random()
+	return random_key
+	
+func setQuestion(): 
+	%Question.text = pick_random(questRep)
 
 	
 func getReponse():

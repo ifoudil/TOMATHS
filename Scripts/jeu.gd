@@ -16,7 +16,7 @@ func apparaitre_ennemi() :
 	var nouvel_ennemi = OBJET_ENNEMI.instantiate()
 	%CheminSpawn.progress_ratio= randf()
 	nouvel_ennemi.global_position = %CheminSpawn.global_position
-	nouvel_ennemi.setQuestion()
+#	nouvel_ennemi.setQuestion()
 	add_child(nouvel_ennemi)
 	return nouvel_ennemi
 	
