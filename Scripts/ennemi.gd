@@ -4,23 +4,43 @@ extends CharacterBody2D
 
 const VITESSE_ENNEMI = 50
 
-var questRep = {"x^a":"ax^a-1",
-"1/x":"-1/x^2",
-}
-
+var questRep = {}
 var text_file_path = "res://Questions/derivees.txt" 
 
+
 func _ready() : 
-	var text_content = get_text_file_content(text_file_path) #en gros faut lire depuis le fichier pour remplir le dictionnaire (et donc vider celui qu'il y a la)
-	print(text_content) # mais du coup je l'ai pas fait pr l'instant quoi
-	
+	questRep = creer_dictionnaire(text_file_path)
+	setQuestion()
+
 
 func get_text_file_content(filePath):
 	var file = FileAccess.open(filePath, FileAccess.READ)
 	var content = file.get_as_text()
 	return content
-	
 
+
+func creer_dictionnaire(chemin_fichier):
+	var dictionnaire_remplir = {}
+	var text_content = get_text_file_content(chemin_fichier)
+	var clef  = ""
+	var valeur = ""
+	var obtenu = false
+	for caractere in text_content : 
+		if !obtenu :
+			if caractere != ',':
+				clef+=caractere
+		else :
+			if caractere != '\n':
+				valeur+=caractere
+		if caractere == ",":
+			dictionnaire_remplir[clef] = ""
+			obtenu = true
+		if caractere  == '\n':
+			dictionnaire_remplir[clef] = valeur
+			valeur = ""
+			clef = ""
+			obtenu = false
+	return dictionnaire_remplir
 
 
 func _physics_process(delta):
