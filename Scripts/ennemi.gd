@@ -4,13 +4,14 @@ extends CharacterBody2D
 
 const VITESSE_ENNEMI = 50
 
+signal mort
+
 var questRep = {}
 var text_file_path = "res://Questions/tablesMultiplication.txt"
 
 
 func _ready() : 
 	questRep = creer_dictionnaire(text_file_path)
-	print(questRep)
 	setQuestion()
 
 
@@ -51,6 +52,7 @@ func _physics_process(delta):
 	
 func die():
 	queue_free()
+	mort.emit()
 
 func pick_random(dictionary: Dictionary) -> Variant:
 	var random_key = dictionary.keys().pick_random()

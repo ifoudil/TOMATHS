@@ -3,6 +3,9 @@ extends Node2D
 const OBJET_ENNEMI = preload("res://Characters_scenes/ennemi.tscn")
 const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
 
+
+var score = 0
+
 func _physics_process(delta):
 	var reponse = %EncadreReponse.getText()
 
@@ -11,15 +14,21 @@ func _physics_process(delta):
 		if(liste_ennemis[i].has_method("die") && liste_ennemis[i].getReponse()==reponse):
 			tirer(liste_ennemis[i])
 			%EncadreReponse.resetText()
+	score+=0.03 #fait augmenter petit à petit le score au fil du temps
+	%Score.text = "Score : " + str(round(score))
 
 func apparaitre_ennemi() : 
 	var nouvel_ennemi = OBJET_ENNEMI.instantiate()
+	nouvel_ennemi.connect("mort",_on_ennemi_mort)
 	%CheminSpawn.progress_ratio= randf()
 	nouvel_ennemi.global_position = %CheminSpawn.global_position
-#	nouvel_ennemi.setQuestion()
 	add_child(nouvel_ennemi)
 	return nouvel_ennemi
-	
+
+
+func _on_ennemi_mort():
+	score+=100
+
 func tirer(nouvel_ennemi):
 	var new_bullet = BULLET_OBJECT.instantiate()
 	new_bullet.global_position = %TomateMain.global_position
@@ -28,7 +37,10 @@ func tirer(nouvel_ennemi):
 	
 
 
+
+
 func _on_timer_timeout():
 	apparaitre_ennemi()
+
 
 	

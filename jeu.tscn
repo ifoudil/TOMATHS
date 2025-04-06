@@ -54,4 +54,11 @@ position = Vector2(577, 307)
 shape = SubResource("CircleShape2D_vw2a3")
 debug_color = Color(0.238033, 0.603754, 0.571407, 0.42)
 
+[node name="Score" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 969.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 72.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

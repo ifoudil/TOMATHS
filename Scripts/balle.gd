@@ -2,6 +2,7 @@ extends Area2D
 
 var travelled_distance =0
 
+
 func _physics_process(delta: float) -> void:
 	const BULLET_SPEED = 1000
 	const MAX_RANGE = 2500
