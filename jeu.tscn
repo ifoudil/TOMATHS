@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
 [ext_resource type="PackedScene" uid="uid://b6gahloa0mpyp" path="res://Characters_scenes/encadrereponse.tscn" id="3_cyuip"]
-[ext_resource type="FontFile" uid="uid://ccc0h1c2gf6g5" path="res://Sprites/Super Larky.ttf" id="4_31f2j"]
-[ext_resource type="Texture2D" uid="uid://urf0kgwou8c5" path="res://Sprites/bareInputBas.png" id="4_s535v"]
+[ext_resource type="FontFile" path="res://Sprites/Super Larky.ttf" id="4_31f2j"]
+[ext_resource type="Texture2D" path="res://Sprites/bareInputBas.png" id="4_s535v"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlyku"]
 _data = {
