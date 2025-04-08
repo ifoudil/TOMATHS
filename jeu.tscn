@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
 [ext_resource type="PackedScene" uid="uid://b6gahloa0mpyp" path="res://Characters_scenes/encadrereponse.tscn" id="3_cyuip"]
-[ext_resource type="FontFile" path="res://Sprites/Super Larky.ttf" id="4_31f2j"]
-[ext_resource type="Texture2D" path="res://Sprites/bareInputBas.png" id="4_s535v"]
+[ext_resource type="FontFile" uid="uid://ccc0h1c2gf6g5" path="res://Sprites/Super Larky.ttf" id="4_31f2j"]
+[ext_resource type="Texture2D" uid="uid://urf0kgwou8c5" path="res://Sprites/bareInputBas.png" id="4_s535v"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlyku"]
 _data = {
@@ -74,4 +74,50 @@ position = Vector2(88.6891, 46)
 scale = Vector2(0.840336, 0.840336)
 texture = ExtResource("4_s535v")
 
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.5
+offset_top = -79.0
+offset_right = 314.5
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 116
+text = "Game Over"
+
+[node name="ScoreFinal" type="Label" parent="GameOver/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -256.0
+offset_right = 143.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 76
+text = "SCORE"
+
+[connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -44,3 +44,9 @@ func _on_timer_timeout():
 
 
 	
+
+
+func _on_tomate_main_tomate_mort():
+	%GameOver.visible = true
+	%ScoreFinal.text = str(round(score))
+	get_tree().paused = true

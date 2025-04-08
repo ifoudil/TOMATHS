@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/tomate_main.gd" id="1_hkfqx"]
 [ext_resource type="Texture2D" uid="uid://hgoc2m4cr5ql" path="res://Sprites/tomate.png" id="1_yvhrf"]
-[ext_resource type="Texture2D" path="res://Sprites/brancheTomate.png" id="3_a2jxx"]
+[ext_resource type="Texture2D" uid="uid://djy32dbdw5jrs" path="res://Sprites/brancheTomate.png" id="3_a2jxx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4ljh"]
 radius = 40.1995
