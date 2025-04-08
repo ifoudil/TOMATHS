@@ -171,5 +171,13 @@ libraries = {
 "": SubResource("AnimationLibrary_287e1")
 }
 
+[node name="Button" type="Button" parent="."]
+offset_left = 99.0
+offset_top = 58.0
+offset_right = 333.0
+offset_bottom = 153.0
+text = "Apprendre à jouer"
+
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
