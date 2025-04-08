@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn</title>
-    <link rel="icon" href="https://static.licdn.com/aero-v1/sc/h/5bukxbhy9xsil5mb7c2wulfbx">
+    <title>TOMATHS : Tutoriel</title>
+    <link rel="icon" href="./externalFiles/TomateClear.png">
     <link href="./style/style.css" rel="stylesheet" />
     <link href="./style/styleSwitcher.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="./scripts/main.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     
-    <!-- defer forces the browser to load the file as soon as it encounters it, eliminating the need to put the script tags at the end of the body,
-     i'd rather use that in order to keep the code cleaner -->
 </head>
 <body>
     
@@ -22,23 +24,42 @@
                 TOMATHS
             </h1>
             <p>Tutoriel de Jeu</p>
+            mettre en background le background du menu principal (je l'ai juste pas la)
         </div>
 <section>
-    <h2>
+    <h2 id="menu">
         <img src ="./externalFiles/TomateClear.png"/>
         Menu Principal
     </h2>
     <article>
+    <h3>Description</h3>
+    <p>Le menu principal se présente sous la forme d'un lieu cryptique ou vous controlez une tomate sur pattes qui se balade, avant de rentrer par mégarde dans une porte qui va lui valoir une attaque par des vers la porte dans laquelle elle rentre permet de choisir les questions posées par les vers, les notions sont d'abord divisées en niveau d'études puis en notion individuelle. Une fois le niveau d'études choisi, la notion se séléctionne par un clic gauche de la souris.</p>
+    <img src="./externalFiles/insererImage.png" alt="Inserer une image ici"/>
+    <p>Le menu où se déplace la tomate</p>
+    <img src="./externalFiles/insererImage.png" alt="Inserer une image ici"/>
+    <p>Menu de choix d'une notion</p>
+    </p>
+    <h3>Utilisation</h3>
+    <p>Le personnage se déplace comme un personnage de jeu vidéo se déplace habituellement, les fleches ou zqsd, espace pour sauter et entrée pour rentrer dans une porte, vous pouvez consulter la partie Contrôles pour en savoir plus. Le menu se présente sous forme d'un escalier mais pas de panique, la tomate saute assez haut pour revenir à la notion que vous auriez raté en chutant. Nous avons créé ce menu uniquement pour offrir une expérience ludique et non pour rajouter de la difficulté au travail des mathématiques.</p>
+
 
     </article>
-    <h2>
+    <h2 id="jeu">
         <img src ="./externalFiles/TomateClear.png"/>
         Jeu
     </h2>
     <article>
-        <p>Dans l'image ci contre, </p>
+        <h3>Description de l'interface</h3>
+        <p>Dans l'image ci contre, vous pouvez apercevoir une capture d'écran provenant d'une partie type.</p>
+        <img src="./externalFiles/insererImage.png" alt="Inserer une image ici"/>
+        <p>Les éléments de cette image importants au jeu sont : la tomate au centre et sa barre de vie, les vers qui arrivent vers la tomate, mais surtout les questions au dessus de leur tête.</p>
+        <p>Il y a également le score en haut à droite, qui vous permet d'évaluer vos performances ainsi qu'une zone en haut où on peut prévisualiser ce qui est écrit.</p>
+        <h3>But du jeu</h3>
+        <p>L'objectif est très simple, et vous l'aurez peut-être deviné, vous devez éliminer les vers qui viennent essayer de manger la tomate, en écrivant les réponses aux questions mathématiques qu'ils portent sur leur tête.</p>
+        <p>Vous disposez pour cela de différentes touches pour écrire plus rapidement les symboles que habituellement au clavier, ces touches sont décrites ci-dessous dans la partie Contrôles</p>
+        <p>Voici quelques exemples de réponses qui pourraient être attendues dans le cadre du jeu. Si un ver porte sur sa tête  \( 4+8 \), écrire 12 l'éliminerai. Si un ver porte sur sa tête  \( x^a \), et que vous etes en train de faire des dérivées, vous devez écrire ax^(a-1) pour l'éliminer</p>
     </article>
-    <h2>
+    <h2 id="controles">
         <img src ="./externalFiles/TomateClear.png"/>
         Contrôles
     </h2>
@@ -65,8 +86,31 @@
     </article>
 </section>
 
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#titre">Accueil</a>
+            <a href="#menu">Menu Principal</a>
+            <a href="#jeu">Jeu</a>
+            <a href="#controles">Contrôles</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/calliixte/TOMATHS">
+                <img  src="./externalFiles/Github-Logo.png" alt="Github du projet">
+            </a>
+            <a href="https://cours.iut-orsay.fr/course/view.php?id=3216">
+                <img src="./externalFiles/moodle.ico" alt="Page moodle du cours">
+            </a>
+
+        </div>
+        <div class="footer-info">
+            © 2025 TOMATHS - Tous droits réservés
+        </div>
+    </div>
+</footer>
 
 
     </div>
+
 </body>
 </html>
