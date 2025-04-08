@@ -34,10 +34,6 @@ func tirer(nouvel_ennemi):
 	new_bullet.global_position = %TomateMain.global_position
 	new_bullet.look_at(nouvel_ennemi.global_position)
 	add_child(new_bullet)
-	
-
-
-
 
 func _on_timer_timeout():
 	apparaitre_ennemi()
@@ -46,9 +42,8 @@ func _on_timer_timeout():
 func _on_tomate_main_tomate_mort():
 	%GameOver.visible = true
 	%ScoreFinal.text = str(round(score))
-	$GameOver/AnimationPlayer.play("game_over")
-	await get_tree().create_timer(1.0).timeout 
 	get_tree().paused = true
+	$GameOver/AnimationPlayer.play("game_over")
 
 
 func _on_button_pressed():
@@ -60,3 +55,28 @@ func _on_button_pressed():
 	# Ouvrir le fichier dans le navigateur
 	OS.shell_open(file_url)
 
+
+
+func _on_recommencer_pressed():
+	get_tree().paused = false
+	recommencer()
+	
+	
+
+func recommencer():
+	%GameOver.visible = false
+	%TomateMain.reset_vie()
+	%EncadreReponse.resetText()
+	
+	var liste_ennemis = %ZoneDeTir.get_overlapping_bodies()
+	for i in range(len(liste_ennemis)-1):
+		if(liste_ennemis[i].has_method("die")):
+			liste_ennemis[i].die()
+			
+	score = 0
+	%Score.text = "Score : " + str(round(score))
+	
+
+
+func _on_sortir_pressed():
+	get_tree().quit() # à changer pour ramener au menu principal une fois que ça sera lié

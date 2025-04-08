@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://6q0rr4ru0lei"]
+[gd_scene load_steps=15 format=3 uid="uid://6q0rr4ru0lei"]
 
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
@@ -68,6 +68,8 @@ tracks/2/keys = {
 _data = {
 "game_over": SubResource("Animation_jjuh8")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_staho"]
 
 [node name="Jeu" type="Node2D"]
 script = ExtResource("1_4aqij")
@@ -149,7 +151,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 350.0
 offset_top = 75.0
-offset_right = -374.0
+offset_right = -373.999
 offset_bottom = -161.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -192,9 +194,47 @@ label_settings = SubResource("LabelSettings_plue2")
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver"]
+process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_287e1")
 }
+
+[node name="Sortir" type="Button" parent="GameOver"]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -166.0
+offset_right = 61.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
+text = "Sortir"
+
+[node name="Recommencer" type="Button" parent="GameOver"]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -202.0
+offset_right = 61.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
+text = "Recommencer"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 99.0
@@ -205,4 +245,6 @@ text = "Apprendre à jouer"
 
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOver/Sortir" to="." method="_on_sortir_pressed"]
+[connection signal="pressed" from="GameOver/Recommencer" to="." method="_on_recommencer_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
