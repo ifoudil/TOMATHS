@@ -114,13 +114,6 @@ position = Vector2(88.6891, 46)
 scale = Vector2(0.840336, 0.840336)
 texture = ExtResource("4_s535v")
 
-[node name="TomateMain" parent="." instance=ExtResource("1_pcqhc")]
-unique_name_in_owner = true
-process_mode = 1
-position = Vector2(577, 307)
-
-[node name="Camera2D" type="Camera2D" parent="TomateMain"]
-
 [node name="ZoneDeTir" type="Area2D" parent="."]
 unique_name_in_owner = true
 process_mode = 1
@@ -129,6 +122,12 @@ process_mode = 1
 position = Vector2(577, 307)
 shape = SubResource("CircleShape2D_vw2a3")
 debug_color = Color(0.238033, 0.603754, 0.571407, 0.42)
+
+[node name="TomateMain" parent="." instance=ExtResource("1_pcqhc")]
+unique_name_in_owner = true
+position = Vector2(577, 307)
+
+[node name="Camera2D" type="Camera2D" parent="TomateMain"]
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -247,13 +246,54 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.486275)
 
-[node name="Button" type="Button" parent="Pause"]
-offset_left = 99.0
-offset_top = 58.0
-offset_right = 333.0
-offset_bottom = 153.0
-text = "Apprendre à jouer"
-metadata/_edit_use_anchors_ = true
+[node name="Tuto" type="Button" parent="Pause"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 136.0
+offset_right = 274.0
+offset_bottom = 231.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 31
+text = "Apprendre a jouer"
+
+[node name="Recommencer" type="Button" parent="Pause"]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -372.0
+offset_right = 275.0
+offset_bottom = -277.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
+text = "Recommencer"
+
+[node name="Sortir" type="Button" parent="Pause"]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -232.0
+offset_right = 275.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
+text = "Sortir"
 
 [node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
 unique_name_in_owner = true
@@ -266,4 +306,6 @@ offset_bottom = 72.0
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="pressed" from="GameOver/Sortir" to="." method="_on_sortir_pressed"]
 [connection signal="pressed" from="GameOver/Recommencer" to="." method="_on_recommencer_pressed"]
-[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/Tuto" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/Recommencer" to="." method="_on_recommencer_pressed"]
+[connection signal="pressed" from="Pause/Sortir" to="." method="_on_sortir_pressed"]

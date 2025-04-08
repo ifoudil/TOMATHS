@@ -5,6 +5,7 @@ const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
 
 
 var score = 0
+var tabEnnemis = {} # Enregistre tous les ennemis pour faciliter la réinitialisation
 
 func _physics_process(delta):
 	if not get_tree().paused :
@@ -24,17 +25,33 @@ func apparaitre_ennemi() :
 	%CheminSpawn.progress_ratio= randf()
 	nouvel_ennemi.global_position = %CheminSpawn.global_position
 	add_child(nouvel_ennemi)
+	nouvel_ennemi.mort.connect(_on_ennemi_mort.bind(nouvel_ennemi))
+	ajouter_ennemi_tab(nouvel_ennemi)
 	return nouvel_ennemi
 
+func ajouter_ennemi_tab(ennemi):
+	var cle = str(tabEnnemis.size())
+	tabEnnemis[cle] = ennemi
 
-func _on_ennemi_mort():
+func _on_ennemi_mort(ennemi):
 	score+=100
+	retirer_ennemi_tab(ennemi)
+	ennemi.queue_free()
 
 func tirer(nouvel_ennemi):
 	var new_bullet = BULLET_OBJECT.instantiate()
 	new_bullet.global_position = %TomateMain.global_position
 	new_bullet.look_at(nouvel_ennemi.global_position)
 	add_child(new_bullet)
+	retirer_ennemi_tab(nouvel_ennemi)
+
+func retirer_ennemi_tab(ennemi):
+	for cle in tabEnnemis.keys():
+		if tabEnnemis[cle] == ennemi:
+			tabEnnemis.erase(ennemi)
+			break
+
+
 
 func _on_timer_timeout():
 	apparaitre_ennemi()
@@ -66,13 +83,14 @@ func _on_recommencer_pressed():
 
 func recommencer():
 	%GameOver.visible = false
+	%Pause.visible = false
 	%TomateMain.reset_vie()
 	%EncadreReponse.resetText()
 	
-	var liste_ennemis = %ZoneDeTir.get_overlapping_bodies()
-	for i in range(len(liste_ennemis)-1):
-		if(liste_ennemis[i].has_method("die")):
-			liste_ennemis[i].die()
+	if tabEnnemis.size() > 0:
+		for i in tabEnnemis.keys():
+			if is_instance_valid(tabEnnemis[i]) and tabEnnemis[i].has_method("die"):
+				tabEnnemis[i].die()
 			
 	score = 0
 	%Score.text = "Score : " + str(round(score))
@@ -86,5 +104,5 @@ func toggle_pause():
 	get_tree().paused = !get_tree().paused
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and not %GameOver.visible:
 		toggle_pause()
