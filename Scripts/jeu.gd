@@ -50,3 +50,14 @@ func _on_tomate_main_tomate_mort():
 	%GameOver.visible = true
 	%ScoreFinal.text = str(round(score))
 	get_tree().paused = true
+
+
+func _on_button_pressed():
+	var html_path = "res://Ajouts/index.html"  # Le chemin relatif dans ton projet Godot	
+	# Convertir en chemin absolu
+	var absolute_path = ProjectSettings.globalize_path(html_path)
+	# Ajouter 'file://' pour que ce soit un chemin compréhensible par le navigateur
+	var file_url = "file://" + absolute_path
+	# Ouvrir le fichier dans le navigateur
+	OS.shell_open(file_url)
+
