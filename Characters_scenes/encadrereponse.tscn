@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/encadréréponse.gd" id="1_3nhfi"]
 
 [node name="EncadreReponse" type="LineEdit"]
+process_mode = 1
 offset_right = 244.0
 offset_bottom = 34.0
 focus_mode = 0

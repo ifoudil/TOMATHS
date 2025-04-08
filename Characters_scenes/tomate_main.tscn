@@ -25,6 +25,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="TomateMain" type="CharacterBody2D"]
+process_mode = 1
 script = ExtResource("1_hkfqx")
 
 [node name="Tomate" type="Sprite2D" parent="."]

@@ -7,6 +7,7 @@
 size = Vector2(126, 128)
 
 [node name="Ennemi" type="CharacterBody2D"]
+process_mode = 1
 script = ExtResource("1_dau13")
 
 [node name="Icon" type="Sprite2D" parent="."]

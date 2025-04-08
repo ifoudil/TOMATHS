@@ -72,22 +72,24 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_staho"]
 
 [node name="Jeu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_4aqij")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 1
 offset_left = -242.0
 offset_top = -127.0
 offset_right = 1384.0
 offset_bottom = 816.0
 color = Color(0.472543, 0.872699, 1, 1)
 
-[node name="TomateMain" parent="." instance=ExtResource("1_pcqhc")]
-unique_name_in_owner = true
-position = Vector2(577, 307)
-
-[node name="Camera2D" type="Camera2D" parent="TomateMain"]
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 3.0
+autostart = true
 
 [node name="Path2D" type="Path2D" parent="."]
+process_mode = 1
 curve = SubResource("Curve2D_vlyku")
 
 [node name="CheminSpawn" type="PathFollow2D" parent="Path2D"]
@@ -95,27 +97,9 @@ unique_name_in_owner = true
 position = Vector2(-102, -140)
 rotation = -0.00592586
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
-[node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
-unique_name_in_owner = true
-offset_left = 444.0
-offset_top = 35.0
-offset_right = 709.0
-offset_bottom = 72.0
-
-[node name="ZoneDeTir" type="Area2D" parent="."]
-unique_name_in_owner = true
-
-[node name="Portee" type="CollisionShape2D" parent="ZoneDeTir"]
-position = Vector2(577, 307)
-shape = SubResource("CircleShape2D_vw2a3")
-debug_color = Color(0.238033, 0.603754, 0.571407, 0.42)
-
 [node name="Score" type="Label" parent="."]
 unique_name_in_owner = true
+process_mode = 1
 offset_left = 934.0
 offset_top = 28.0
 offset_right = 1115.0
@@ -129,6 +113,22 @@ text = "la la"
 position = Vector2(88.6891, 46)
 scale = Vector2(0.840336, 0.840336)
 texture = ExtResource("4_s535v")
+
+[node name="TomateMain" parent="." instance=ExtResource("1_pcqhc")]
+unique_name_in_owner = true
+process_mode = 1
+position = Vector2(577, 307)
+
+[node name="Camera2D" type="Camera2D" parent="TomateMain"]
+
+[node name="ZoneDeTir" type="Area2D" parent="."]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="Portee" type="CollisionShape2D" parent="ZoneDeTir"]
+position = Vector2(577, 307)
+shape = SubResource("CircleShape2D_vw2a3")
+debug_color = Color(0.238033, 0.603754, 0.571407, 0.42)
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -218,7 +218,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Sortir"
 
 [node name="Recommencer" type="Button" parent="GameOver"]
-unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -236,15 +235,35 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Recommencer"
 
-[node name="Button" type="Button" parent="."]
+[node name="Pause" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.486275)
+
+[node name="Button" type="Button" parent="Pause"]
 offset_left = 99.0
 offset_top = 58.0
 offset_right = 333.0
 offset_bottom = 153.0
 text = "Apprendre à jouer"
+metadata/_edit_use_anchors_ = true
 
-[connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
+[node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
+unique_name_in_owner = true
+offset_left = 444.0
+offset_top = 35.0
+offset_right = 709.0
+offset_bottom = 72.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="pressed" from="GameOver/Sortir" to="." method="_on_sortir_pressed"]
 [connection signal="pressed" from="GameOver/Recommencer" to="." method="_on_recommencer_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]

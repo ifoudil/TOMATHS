@@ -7,6 +7,7 @@
 radius = 268.477
 
 [node name="pointDeTir" type="Area2D"]
+process_mode = 1
 script = ExtResource("1_8bxmd")
 
 [node name="portee" type="CollisionShape2D" parent="."]

@@ -7,15 +7,16 @@ const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
 var score = 0
 
 func _physics_process(delta):
-	var reponse = %EncadreReponse.getText()
+	if not get_tree().paused :
+		var reponse = %EncadreReponse.getText()
 
-	var liste_ennemis = %ZoneDeTir.get_overlapping_bodies()
-	for i in range(len(liste_ennemis)-1):
-		if(liste_ennemis[i].has_method("die") && liste_ennemis[i].getReponse()==reponse):
-			tirer(liste_ennemis[i])
-			%EncadreReponse.resetText()
-	score+=0.03 #fait augmenter petit à petit le score au fil du temps
-	%Score.text = "Score : " + str(round(score))
+		var liste_ennemis = %ZoneDeTir.get_overlapping_bodies()
+		for i in range(len(liste_ennemis)-1):
+			if(liste_ennemis[i].has_method("die") && liste_ennemis[i].getReponse()==reponse):
+				tirer(liste_ennemis[i])
+				%EncadreReponse.resetText()
+		score+=0.03 #fait augmenter petit à petit le score au fil du temps
+		%Score.text = "Score : " + str(round(score))
 
 func apparaitre_ennemi() : 
 	var nouvel_ennemi = OBJET_ENNEMI.instantiate()
@@ -77,6 +78,13 @@ func recommencer():
 	%Score.text = "Score : " + str(round(score))
 	
 
-
 func _on_sortir_pressed():
 	get_tree().quit() # à changer pour ramener au menu principal une fois que ça sera lié
+
+func toggle_pause():
+	%Pause.visible = !%Pause.visible
+	get_tree().paused = !get_tree().paused
+
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"):
+		toggle_pause()
