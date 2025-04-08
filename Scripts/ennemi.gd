@@ -45,8 +45,12 @@ func creer_dictionnaire(chemin_fichier):
 	return dictionnaire_remplir
 
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	var direction = global_position.direction_to(player.global_position)
+	
+	var angle = direction.angle()
+	rotation = angle
+	
 	velocity = direction * VITESSE_ENNEMI
 	move_and_slide()
 	
