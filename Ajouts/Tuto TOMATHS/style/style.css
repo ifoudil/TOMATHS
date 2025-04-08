@@ -1,0 +1,129 @@
+@font-face {
+    font-family: planetMonster;
+    src: url(../externalFiles/PlanetMonsterDemoRegular.ttf) format('truetype');
+}
+
+body {
+    display: flex;
+    justify-content: start;
+    background-color: white;
+}
+
+body div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titre {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#titre h1 {
+    font-family: planetMonster;
+    color: red;
+    text-decoration: underline green;
+    font-size: 20vw;
+}
+
+#titre p {
+    align-self: center;
+    font-size: 5vw;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border: 3px solid green;
+    border-radius: 5px;
+}
+#switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer les éléments horizontalement */
+    gap: 20px; /* Espacement entre le texte et le bouton */
+    margin-bottom: 20px; /* Un peu d'espace sous le switcher */
+}
+
+#switcher p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    border-radius: 10px;
+    padding : 0.2vw;
+}
+#switcher #Clavier{
+    border : 2px solid green;
+}
+#switcher #Manette{
+    border : 2px solid red;
+}
+#switcher {
+
+    position: relative;
+    flex-direction: row;
+    z-index: 2; 
+}
+
+body h2 {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 5vw;
+    border-bottom: solid red 2px;
+    min-width: 100vw;
+    margin-left : 2.5vw;
+}
+
+body h2 img {
+    border: 2px solid green;
+    width: 10vw;
+    height: 10vw;
+}
+
+/* Media Queries pour la vue ordinateur */
+@media (min-width: 768px) {
+    body {
+        justify-content: center;
+    }
+
+    #titre h1 {
+        font-size: 130px; /* Taille en px pour ordinateur */
+    }
+
+    #titre p {
+        font-size: 25px; /* Taille en px pour ordinateur */
+    }
+
+    body h2 {
+        font-size: 20px; /* Taille en px pour ordinateur */
+    }
+
+    body h2 img {
+        width: 100px; /* Taille en px pour ordinateur */
+        height: 100px; /* Taille en px pour ordinateur */
+    }
+}
+
+/* Media Queries pour la vue écran complet (grand écran) */
+@media (min-width: 1200px) {
+    body {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    #titre h1 {
+        font-size: 150px; /* Taille en px pour très grand écran */
+    }
+
+    #titre p {
+        font-size: 30px; /* Taille en px pour très grand écran */
+    }
+
+    body h2 {
+        font-size: 24px; /* Taille en px pour très grand écran */
+    }
+
+    body h2 img {
+        width: 120px; /* Taille en px pour très grand écran */
+        height: 120px; /* Taille en px pour très grand écran */
+    }
+}

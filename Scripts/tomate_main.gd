@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var vie = 1 #nombre de points de vie de la tomate
+var vie = 10 #nombre de points de vie de la tomate
 
 signal tomate_mort
 

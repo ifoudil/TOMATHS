@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn</title>
+    <link rel="icon" href="https://static.licdn.com/aero-v1/sc/h/5bukxbhy9xsil5mb7c2wulfbx">
+    <link href="./style/style.css" rel="stylesheet" />
+    <link href="./style/styleSwitcher.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+    
+    <!-- defer forces the browser to load the file as soon as it encounters it, eliminating the need to put the script tags at the end of the body,
+     i'd rather use that in order to keep the code cleaner -->
+</head>
+<body>
+    
+    <div id="app">
+        <div id="titre">
+            <h1>
+                TOMATHS
+            </h1>
+            <p>Tutoriel de Jeu</p>
+        </div>
+<section>
+    <h2>
+        <img src ="./externalFiles/TomateClear.png"/>
+        Menu Principal
+    </h2>
+    <article>
+
+    </article>
+    <h2>
+        <img src ="./externalFiles/TomateClear.png"/>
+        Jeu
+    </h2>
+    <article>
+        <p>Dans l'image ci contre, </p>
+    </article>
+    <h2>
+        <img src ="./externalFiles/TomateClear.png"/>
+        Contrôles
+    </h2>
+    <article>
+        <div id="switcher">
+            <p id="Clavier">Clavier</p>
+            <label class="switch">
+                <input type="checkbox" @click="showUpgrades">
+                <span class="slider"></span>
+              </label>
+              <p id="Manette">Manette</p>
+        </div>
+
+        <img src="./externalFiles/ControlesClavierTest.png" v-if="!keyboardControl"/>
+        <img src="./externalFiles/ControlesManetteTest.png" v-else/>
+        
+    </article>
+    <h2>
+        <img src ="./externalFiles/TomateClear.png"/>
+        ???
+    </h2>
+    <article>
+
+    </article>
+</section>
+
+
+
+    </div>
+</body>
+</html>

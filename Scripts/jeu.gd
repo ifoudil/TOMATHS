@@ -52,7 +52,7 @@ func _on_tomate_main_tomate_mort():
 
 
 func _on_button_pressed():
-	var html_path = "res://Ajouts/index.html"  # Le chemin relatif dans ton projet Godot	
+	var html_path = "res://Ajouts/TUTO TOMATHS/index.html"  # Le chemin relatif dans ton projet Godot	
 	# Convertir en chemin absolu
 	var absolute_path = ProjectSettings.globalize_path(html_path)
 	# Ajouter 'file://' pour que ce soit un chemin compréhensible par le navigateur
