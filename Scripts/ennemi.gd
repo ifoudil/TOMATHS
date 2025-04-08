@@ -8,7 +8,7 @@ const VITESSE_ENNEMI = 50
 signal mort
 
 var questRep = {}
-var text_file_path = "res://Questions/tablesMultiplication.txt"
+var text_file_path = "res://Questions/Superieur/binaireSimple.txt"
 
 
 func _ready() : 

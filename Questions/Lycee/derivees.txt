@@ -1,0 +1,10 @@
+x^a,ax^(a-1)
+ax^a,a^2x^(a-1)
+1/x,-1/x^2
+x^(-1),-x^(-2)
+x^2,2x
+1/x^2,-2/x^3
+e^x,e^x
+ln(x),1/x
+sin(x),cos(x)
+cos(x),-sin(x)
