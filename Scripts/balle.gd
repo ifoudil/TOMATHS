@@ -8,6 +8,10 @@ func _physics_process(delta: float) -> void:
 	const MAX_RANGE = 2500
 	
 	var direction = Vector2.RIGHT.rotated(rotation)
+	
+	var angle = direction.angle()
+	rotation = angle
+	
 	position += direction * BULLET_SPEED * delta #makes the thing time dependant instead of frame dependant, didnt have to do it for characters cuz move and slide did it for us
 	travelled_distance+= BULLET_SPEED * delta
 	if(travelled_distance>MAX_RANGE):
