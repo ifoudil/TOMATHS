@@ -25,7 +25,6 @@ func apparaitre_ennemi() :
 	%CheminSpawn.progress_ratio= randf()
 	nouvel_ennemi.global_position = %CheminSpawn.global_position
 	add_child(nouvel_ennemi)
-	nouvel_ennemi.mort.connect(_on_ennemi_mort.bind(nouvel_ennemi))
 	ajouter_ennemi_tab(nouvel_ennemi)
 	return nouvel_ennemi
 

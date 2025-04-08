@@ -57,7 +57,7 @@ func _physics_process(delta):
 	
 func die():
 	queue_free()
-	mort.emit()
+	mort.emit(self)
 
 func pick_random(dictionary: Dictionary) -> Variant:
 	var random_key = dictionary.keys().pick_random()
