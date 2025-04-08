@@ -43,10 +43,9 @@ func _on_timer_timeout():
 	apparaitre_ennemi()
 
 
-	
-
-
 func _on_tomate_main_tomate_mort():
 	%GameOver.visible = true
 	%ScoreFinal.text = str(round(score))
+	$GameOver/AnimationPlayer.play("game_over")
+	await get_tree().create_timer(1.0).timeout 
 	get_tree().paused = true

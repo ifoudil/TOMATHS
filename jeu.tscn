@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://6q0rr4ru0lei"]
+[gd_scene load_steps=11 format=3 uid="uid://6q0rr4ru0lei"]
 
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
 [ext_resource type="PackedScene" uid="uid://b6gahloa0mpyp" path="res://Characters_scenes/encadrereponse.tscn" id="3_cyuip"]
 [ext_resource type="FontFile" uid="uid://ccc0h1c2gf6g5" path="res://Sprites/Super Larky.ttf" id="4_31f2j"]
 [ext_resource type="Texture2D" uid="uid://urf0kgwou8c5" path="res://Sprites/bareInputBas.png" id="4_s535v"]
+[ext_resource type="Texture2D" uid="uid://kpayxemlwjpv" path="res://Sprites/splash.png" id="6_7hop6"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlyku"]
 _data = {
@@ -14,6 +15,38 @@ point_count = 5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vw2a3"]
 radius = 854.4
+
+[sub_resource type="Animation" id="Animation_jjuh8"]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/splash:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/splash:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_287e1"]
+_data = {
+"game_over": SubResource("Animation_jjuh8")
+}
 
 [node name="Jeu" type="Node2D"]
 script = ExtResource("1_4aqij")
@@ -86,6 +119,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.529412)
 
+[node name="splash" type="TextureRect" parent="GameOver/ColorRect"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7hop6")
+
 [node name="Label" type="Label" parent="GameOver/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
@@ -118,6 +164,12 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 76
 text = "SCORE"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver"]
+libraries = {
+"": SubResource("AnimationLibrary_287e1")
+}
 
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
