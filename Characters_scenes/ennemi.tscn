@@ -10,6 +10,7 @@ size = Vector2(126, 128)
 script = ExtResource("1_dau13")
 
 [node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_ulini")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

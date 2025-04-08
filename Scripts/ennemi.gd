@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = get_node("/root/Jeu/TomateMain") # il y a une meilleure maniere de le faire en l'assignant quand il spawn je crois
+@onready var icon = $Icon
 
 const VITESSE_ENNEMI = 50
 
@@ -49,7 +50,7 @@ func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	
 	var angle = direction.angle()
-	rotation = angle
+	icon.rotation = angle
 	
 	velocity = direction * VITESSE_ENNEMI
 	move_and_slide()
