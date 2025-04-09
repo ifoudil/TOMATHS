@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76rvcsane64a"
-path="res://.godot/imported/tilemap-characters.png-5f907d45e28ddf62b4213bce87c330a3.ctex"
+uid="uid://b7obeuvr5imfo"
+path="res://.godot/imported/tomaths_with_tomatoe.png-6519f408d8ad54c2d4e2226d6c7c4911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tilemap-characters.png"
-dest_files=["res://.godot/imported/tilemap-characters.png-5f907d45e28ddf62b4213bce87c330a3.ctex"]
+source_file="res://Sprites/tomaths_with_tomatoe.png"
+dest_files=["res://.godot/imported/tomaths_with_tomatoe.png-6519f408d8ad54c2d4e2226d6c7c4911.ctex"]
 
 [params]
 

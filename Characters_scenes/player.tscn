@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bja0h21n7phdm"]
+[gd_scene load_steps=9 format=3 uid="uid://dgwnun0memswe"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ddjso"]
-[ext_resource type="Texture2D" uid="uid://mp85hqlm0bx8" path="res://Sprites/tilemap-characters.png" id="2_8v4yp"]
+[ext_resource type="Texture2D" uid="uid://76rvcsane64a" path="res://Sprites/tilemap-characters.png" id="2_8v4yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_de2uv"]
 size = Vector2(60, 70)
