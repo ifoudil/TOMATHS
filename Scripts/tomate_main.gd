@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
-const MAX_PV = 2 #nombre de points de vie de la tomate
+const MAX_PV = 50 #nombre de points de vie de la tomate
 var vie = MAX_PV 
 
 signal tomate_mort
 
 func _ready():
 	%BarreDeVie.max_value = MAX_PV
+	%BarreDeVie.value = MAX_PV
 
 func _physics_process(delta):
 	var liste_entites_touche = %Hurtbox.get_overlapping_bodies()
