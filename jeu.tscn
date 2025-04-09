@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6q0rr4ru0lei"]
+[gd_scene load_steps=14 format=3 uid="uid://6q0rr4ru0lei"]
 
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
@@ -68,8 +68,6 @@ tracks/2/keys = {
 _data = {
 "game_over": SubResource("Animation_jjuh8")
 }
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_staho"]
 
 [node name="Jeu" type="Node2D"]
 process_mode = 3
@@ -299,7 +297,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 31
-theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Recommencer"
 
 [node name="Sortir" type="Button" parent="Pause"]
@@ -317,7 +314,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 31
-theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Retour au menu principal"
 
 [node name="Reprendre" type="Button" parent="Pause"]

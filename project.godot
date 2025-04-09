@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="testing"
+config/name="TOMATHS"
 run/main_scene="res://jeu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://Sprites/icon.svg"
+config/icon="res://Sprites/tomate.png"
 
 [autoload]
 
