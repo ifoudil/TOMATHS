@@ -10,8 +10,11 @@
 body {
     display: flex;
     justify-content: start;
-    background-color: white;
     flex-wrap: wrap;
+    background-image: url("../externalFiles/fond_plus_grand.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
 }
 
 body div {
@@ -42,7 +45,7 @@ body div {
     align-self: center;
     font-size: 5vw;
     font-family: 'Poppins', sans-serif;
-    color: black;
+    color: #000000;
     border: 3px solid green;
     border-radius: 5px;
 }
@@ -60,6 +63,7 @@ body div {
     margin: 0;
     border-radius: 10px;
     padding : 0.2vw;
+    color : #FFFAA0;
 }
 #switcher #Clavier{
     border : 2px solid green;
@@ -76,7 +80,7 @@ body div {
 
 body h2 {
     font-family: 'Poppins', sans-serif;
-    color: black;
+    color: #FFFAA0;
     font-size: 5vw;
     border-bottom: solid red 2px;
     width: 100%;
@@ -97,7 +101,7 @@ body section article img{
 
 body h3{
     text-decoration: underline solid 3px green;
-    color : black;
+    color : #FFFAA0;
     font-family : 'Poppins', sans-serif;
 }
 body article{
@@ -108,12 +112,12 @@ body article p{
     padding : 2px;
     font-family : 'Arial';
     margin-left: 3vw;
+    color : #FFFAA0;
 }
 
 /* Footer Styles */
 footer {
     width: 100%;
-    background-color: white;
     border-top: 3px solid green;
     padding: 2vw 0;
     margin-top: 5vw;
@@ -140,7 +144,7 @@ footer {
 }
 
 .footer-links a {
-    color: black;
+    color: #FFFAA0;
     text-decoration: none;
     font-size: 4vw;
     transition: color 0.3s;
@@ -155,7 +159,7 @@ footer {
 .footer-info {
     text-align: center;
     font-size: 3vw;
-    color: black;
+    color: #FFFAA0;
     border-top: 2px solid red;
     padding-top: 2vw;
     width: 100%;
