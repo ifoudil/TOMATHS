@@ -88,6 +88,14 @@ process_mode = 1
 wait_time = 3.0
 autostart = true
 
+[node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 444.0
+offset_top = 35.0
+offset_right = 709.0
+offset_bottom = 72.0
+
 [node name="Path2D" type="Path2D" parent="."]
 process_mode = 1
 curve = SubResource("Curve2D_vlyku")
@@ -327,13 +335,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 30
 text = "Reprendre"
-
-[node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
-unique_name_in_owner = true
-offset_left = 444.0
-offset_top = 35.0
-offset_right = 709.0
-offset_bottom = 72.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
