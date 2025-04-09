@@ -1,16 +1,21 @@
 extends LineEdit
 
 var nombreChange = false
-
+var actions_texte = {
+	"puissance" : "^",
+	"a": "a",
+	"division": "/",
+	"inconnue 1 (x)": "x",
+	"moins": "-",
+	"plus": "+",
+	"parentheseGauche" : "(",
+	"parentheseDroite" : ")",
+	"cos" : "cos(x)",
+	"sin" : "sin(x)",
+	"exp":"e^x"
+}
 func _physics_process(delta):
-	var actions_texte = {
-		"puissance" : "^",
-		"a": "a",
-		"division": "/",
-		"inconnue 1 (x)": "x",
-		"moins": "-",
-		"plus": "+"
-	}
+
 
 	for action in actions_texte.keys():
 		if Input.is_action_just_pressed(action):
