@@ -318,7 +318,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
-text = "Sortir"
+text = "Retour au menu principal"
 
 [node name="Reprendre" type="Button" parent="Pause"]
 anchors_preset = 8
