@@ -107,3 +107,7 @@ func toggle_pause():
 func _unhandled_input(event):
 	if event.is_action_pressed("pause") and not %GameOver.visible:
 		toggle_pause()
+
+
+func _on_reprendre_pressed():
+	toggle_pause()
