@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgxn8omlio83c"]
+
+[ext_resource type="Script" path="res://Scripts/tomate_main.gd" id="1_hkfqx"]
+[ext_resource type="Texture2D" uid="uid://hgoc2m4cr5ql" path="res://Sprites/tomate.png" id="1_yvhrf"]
+[ext_resource type="Texture2D" uid="uid://djy32dbdw5jrs" path="res://Sprites/brancheTomate.png" id="3_a2jxx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4ljh"]
+radius = 40.1995
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t81bh"]
+radius = 75.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvad6"]
+bg_color = Color(5.29438e-07, 0.451183, 0.227027, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hti64"]
+bg_color = Color(0.767351, 0.0409824, 0.199673, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="TomateMain" type="CharacterBody2D"]
+process_mode = 1
+script = ExtResource("1_hkfqx")
+
+[node name="Tomate" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_yvhrf")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_h4ljh")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_t81bh")
+debug_color = Color(0.772826, 0.28719, 0.840336, 0.42)
+
+[node name="BarreDeVie" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -99.0
+offset_top = -88.0
+offset_right = 101.0
+offset_bottom = -61.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fvad6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hti64")
+max_value = 10.0
+value = 10.0
+
+[node name="BrancheTomate" type="Sprite2D" parent="BarreDeVie"]
+position = Vector2(185.393, 18.25)
+scale = Vector2(0.579225, 0.579225)
+texture = ExtResource("3_a2jxx")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

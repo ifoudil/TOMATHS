@@ -4,7 +4,7 @@ const OBJET_ENNEMI = preload("res://Characters_scenes/ennemi.tscn")
 const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
 
 
-var score = 0
+
 var tabEnnemis = {} # Enregistre tous les ennemis pour faciliter la réinitialisation
 
 func _physics_process(delta):
@@ -16,8 +16,10 @@ func _physics_process(delta):
 			if(liste_ennemis[i].has_method("die") && liste_ennemis[i].getReponse()==reponse):
 				tirer(liste_ennemis[i])
 				%EncadreReponse.resetText()
-		score+=0.03 #fait augmenter petit à petit le score au fil du temps
-		%Score.text = "Score : " + str(round(score))
+		Global.score+=0.03 #fait augmenter petit à petit le score au fil du temps
+		%Score.text = "Score : " + str(round(Global.score))
+		
+
 
 func apparaitre_ennemi() : 
 	var nouvel_ennemi = OBJET_ENNEMI.instantiate()
@@ -33,7 +35,7 @@ func ajouter_ennemi_tab(ennemi):
 	tabEnnemis[cle] = ennemi
 
 func _on_ennemi_mort(ennemi):
-	score+=100
+	Global.score+=100
 	retirer_ennemi_tab(ennemi)
 	ennemi.queue_free()
 
@@ -43,7 +45,7 @@ func tirer(nouvel_ennemi):
 	new_bullet.look_at(nouvel_ennemi.global_position)
 	add_child(new_bullet)
 	retirer_ennemi_tab(nouvel_ennemi)
-
+	
 func retirer_ennemi_tab(ennemi):
 	for cle in tabEnnemis.keys():
 		if tabEnnemis[cle] == ennemi:
@@ -58,7 +60,7 @@ func _on_timer_timeout():
 
 func _on_tomate_main_tomate_mort():
 	%GameOver.visible = true
-	%ScoreFinal.text = str(round(score))
+	%ScoreFinal.text = str(round(Global.score))
 	get_tree().paused = true
 	$GameOver/AnimationPlayer.play("game_over")
 
@@ -91,8 +93,8 @@ func recommencer():
 			if is_instance_valid(tabEnnemis[i]) and tabEnnemis[i].has_method("die"):
 				tabEnnemis[i].die()
 			
-	score = 0
-	%Score.text = "Score : " + str(round(score))
+	Global.score = 0
+	%Score.text = "Score : " + str(round(Global.score))
 	
 
 func _on_sortir_pressed():
