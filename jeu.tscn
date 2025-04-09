@@ -200,39 +200,53 @@ libraries = {
 
 [node name="Sortir" type="Button" parent="GameOver"]
 process_mode = 3
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -166.0
-offset_right = 61.0
-offset_bottom = -135.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 189.5
+offset_right = 93.0
+offset_bottom = 220.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
-text = "Sortir"
+text = "Retour au menu principal"
 
 [node name="Recommencer" type="Button" parent="GameOver"]
 process_mode = 3
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -202.0
-offset_right = 61.0
-offset_bottom = -171.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 117.0
+offset_right = 93.0
+offset_bottom = 148.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Recommencer"
+
+[node name="Tuto" type="Button" parent="GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 153.0
+offset_right = 93.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 25
+text = "Apprendre a jouer"
 
 [node name="Pause" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -247,14 +261,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.486275)
 
 [node name="Tuto" type="Button" parent="Pause"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -266.0
-offset_top = 136.0
-offset_right = 274.0
-offset_bottom = 231.0
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -95.5
+offset_right = 270.0
+offset_bottom = -0.5
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 31
 text = "Apprendre a jouer"
@@ -266,10 +283,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -265.0
-offset_top = -372.0
-offset_right = 275.0
-offset_bottom = -277.0
+offset_left = -270.0
+offset_top = -295.0
+offset_right = 270.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_n83q1")
@@ -284,16 +301,32 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -265.0
-offset_top = -232.0
-offset_right = 275.0
-offset_bottom = -137.0
+offset_left = -270.0
+offset_top = -170.0
+offset_right = 270.0
+offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/hover = SubResource("StyleBoxEmpty_staho")
 text = "Sortir"
+
+[node name="Reprendre" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -221.0
+offset_right = 269.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_n83q1")
+theme_override_font_sizes/font_size = 30
+text = "Reprendre"
 
 [node name="EncadreReponse" parent="." instance=ExtResource("3_cyuip")]
 unique_name_in_owner = true
@@ -306,6 +339,8 @@ offset_bottom = 72.0
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]
 [connection signal="pressed" from="GameOver/Sortir" to="." method="_on_sortir_pressed"]
 [connection signal="pressed" from="GameOver/Recommencer" to="." method="_on_recommencer_pressed"]
+[connection signal="pressed" from="GameOver/Tuto" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/Tuto" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/Recommencer" to="." method="_on_recommencer_pressed"]
 [connection signal="pressed" from="Pause/Sortir" to="." method="_on_sortir_pressed"]
+[connection signal="pressed" from="Pause/Reprendre" to="." method="_on_reprendre_pressed"]
