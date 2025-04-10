@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bplqt03oiigma" path="res://Sprites/tomateOvale.png" id="5_0kd8d"]
 [ext_resource type="Texture2D" uid="uid://cdnj2hahfg1pd" path="res://Sprites/grappetomates.png" id="6_d2m6n"]
 [ext_resource type="PackedScene" uid="uid://dfcygstgntw6g" path="res://Characters_scenes/door.tscn" id="7_mx8rt"]
-[ext_resource type="PackedScene" uid="uid://bja0h21n7phdm" path="res://Characters_scenes/player.tscn" id="8_h2a3y"]
+[ext_resource type="PackedScene" uid="uid://dgwnun0memswe" path="res://Characters_scenes/player.tscn" id="8_h2a3y"]
 [ext_resource type="Texture2D" uid="uid://c16bbrlfjbjgm" path="res://Sprites/vide.png" id="9_r7v6b"]
 [ext_resource type="Texture2D" uid="uid://dkjfwuu8wnki5" path="res://Sprites/fond_sauce_tomate_4.png" id="10_y6ajp"]
 [ext_resource type="Texture2D" uid="uid://vd8xglhfhsjd" path="res://Sprites/fond_sauce_tomate_3.png" id="11_xkl7m"]

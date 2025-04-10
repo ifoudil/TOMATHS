@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfcygstgntw6g" path="res://Characters_scenes/door.tscn" id="3_pj5qx"]
 [ext_resource type="Texture2D" uid="uid://t6uryoisa8kw" path="res://Sprites/coeurDeBoeuf-removebg-preview.png" id="3_xhtat"]
 [ext_resource type="Texture2D" uid="uid://bplqt03oiigma" path="res://Sprites/tomateOvale.png" id="4_61012"]
-[ext_resource type="PackedScene" uid="uid://bja0h21n7phdm" path="res://Characters_scenes/player.tscn" id="4_i0hj4"]
+[ext_resource type="PackedScene" uid="uid://dgwnun0memswe" path="res://Characters_scenes/player.tscn" id="4_i0hj4"]
 [ext_resource type="Texture2D" uid="uid://bl200eyrynqys" path="res://Sprites/menu_img.png" id="5_xhv7b"]
 [ext_resource type="Texture2D" uid="uid://c16bbrlfjbjgm" path="res://Sprites/vide.png" id="9_se8ac"]
 [ext_resource type="Texture2D" uid="uid://dkjfwuu8wnki5" path="res://Sprites/fond_sauce_tomate_4.png" id="10_p58nk"]
