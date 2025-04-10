@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://6q0rr4ru0lei"]
+[gd_scene load_steps=15 format=3 uid="uid://6q0rr4ru0lei"]
 
 [ext_resource type="Script" path="res://Scripts/jeu.gd" id="1_4aqij"]
 [ext_resource type="PackedScene" uid="uid://cgxn8omlio83c" path="res://Characters_scenes/tomate_main.tscn" id="1_pcqhc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://urf0kgwou8c5" path="res://Sprites/bareInputBas.png" id="4_s535v"]
 [ext_resource type="Texture2D" uid="uid://kpayxemlwjpv" path="res://Sprites/splash.png" id="6_7hop6"]
 [ext_resource type="FontFile" uid="uid://542xk7pormbc" path="res://Ajouts/Tuto TOMATHS/externalFiles/PlanetMonsterDemoRegular.ttf" id="7_n83q1"]
+[ext_resource type="AudioStream" uid="uid://hjl2qopk1073" path="res://Sprites/audio/splash.mp3" id="8_crsyc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlyku"]
 _data = {
@@ -331,6 +332,9 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_n83q1")
 theme_override_font_sizes/font_size = 30
 text = "Reprendre"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_crsyc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="tomate_mort" from="TomateMain" to="." method="_on_tomate_main_tomate_mort"]

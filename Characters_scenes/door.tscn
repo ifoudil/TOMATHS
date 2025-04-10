@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfcygstgntw6g"]
+[gd_scene load_steps=8 format=3 uid="uid://dfcygstgntw6g"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_10po3"]
 [ext_resource type="Texture2D" uid="uid://i4l1g45i777t" path="res://Sprites/tile_0150.png" id="1_vhmm3"]
 [ext_resource type="Texture2D" uid="uid://bqppxsmrfray0" path="res://Sprites/tile_0150_mi_open.png" id="2_advxp"]
 [ext_resource type="Texture2D" uid="uid://dipgjfmab3wfo" path="res://Sprites/tile_0150_open.png" id="3_5poh2"]
+[ext_resource type="AudioStream" uid="uid://csjo1bu3e6edc" path="res://Sprites/audio/door-noise-creak-236022.mp3" id="5_x2mcc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xkfu"]
 size = Vector2(76, 90)
@@ -45,3 +46,6 @@ position = Vector2(9.5, 0)
 scale = Vector2(3.944, 5)
 sprite_frames = SubResource("SpriteFrames_mg8i1")
 animation = &"door_open"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x2mcc")

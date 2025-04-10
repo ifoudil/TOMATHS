@@ -11,6 +11,8 @@ signal play
 @onready var area_binaire = $Area2DBinaire
 @onready var area_binaire_avancee = $Area2DBinaireAvancee
 @onready var area_dlzero = $Area2DDLZero
+@onready var player = $AudioStreamPlayer2D
+@onready var splash = $AudioStreamPlayer2D2
 
 # Précharge des scènes à charger
 var scene_binaire = preload("res://jeu.tscn")
@@ -37,6 +39,13 @@ func _ready():
 
 	area_dlzero.body_entered.connect(_on_entered_dlzero)
 	area_dlzero.body_exited.connect(_on_exited_dlzero)
+	
+	
+	player.play()
+	player.connect("finished", Callable(self, "_on_music_finished"))
+	
+func _on_music_finished():
+	player.play()  
 
 #Fonctions d’entrée/sortie pour chaque zone
 func _on_entered_binaire(body):
@@ -75,7 +84,7 @@ func _process(delta):
 		elif player_in_dlzero:
 			Global.questionsChemin="res://Questions/Superieur/binaire.txt"
 			_start_transition(scene_dlzero, sprite_dlzero)
-			
+		splash.play()	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 

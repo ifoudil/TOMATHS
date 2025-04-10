@@ -13,6 +13,8 @@ signal play
 @onready var area_nbrelatif = $Area2DNbRelatif
 @onready var area_equa = $Area2DEqua
 @onready var area_carre = $Area2DCarre
+@onready var player = $AudioStreamPlayer2D
+@onready var splash = $AudioStreamPlayer2D2
 
 # Préchargement des scènes associées
 var scene_mult = preload("res://jeu.tscn")
@@ -44,6 +46,12 @@ func _ready():
 
 	area_carre.body_entered.connect(_on_entered_carre)
 	area_carre.body_exited.connect(_on_exited_carre)
+	
+	player.play()
+	player.connect("finished", Callable(self, "_on_music_finished"))
+	
+func _on_music_finished():
+	player.play()  
 
 # === Fonctions d'entrée/sortie ===
 func _on_entered_mult(body):
@@ -93,6 +101,7 @@ func _process(delta):
 		elif player_in_carre:
 			Global.questionsChemin="res://Questions/College/carres.txt"
 			_start_transition(scene_carre, sprite_carre)
+		splash.play()
 	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()

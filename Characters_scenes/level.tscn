@@ -1,11 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://biemwy7e1t814"]
+[gd_scene load_steps=27 format=3 uid="uid://biemwy7e1t814"]
 
 [ext_resource type="PackedScene" uid="uid://dgwnun0memswe" path="res://Characters_scenes/player.tscn" id="1_f5uhv"]
-[ext_resource type="PackedScene" path="res://Characters_scenes/door.tscn" id="2_7rllr"]
+[ext_resource type="PackedScene" uid="uid://dfcygstgntw6g" path="res://Characters_scenes/door.tscn" id="2_7rllr"]
 [ext_resource type="Texture2D" uid="uid://b8rqaerl0vwdt" path="res://Sprites/fond_pixel_champs.png" id="3_4bvgt"]
 [ext_resource type="FontFile" uid="uid://b0b3ahm2x6ge3" path="res://Sprites/PlanetMonsterDemoRegular.ttf" id="3_kors4"]
+[ext_resource type="AudioStream" uid="uid://dcu71exfito2f" path="res://Sprites/audio/Tomaths_menu.mp3" id="5_hkdfy"]
 
 [sub_resource type="GDScript" id="GDScript_xh6iv"]
+script/source = "extends Node
+
+@onready var menu = $AudioStreamPlayer2D
+
+func _ready():
+	menu.play()
+	menu.connect(\"finished\", Callable(self, \"_on_music_finished\"))
+
+func _on_music_finished():
+	menu.play() 
+"
 
 [sub_resource type="Gradient" id="Gradient_bw35e"]
 offsets = PackedFloat32Array(0, 0.292208, 0.480519, 0.814935)
@@ -514,5 +526,8 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4bvgt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hkdfy")
 
 [connection signal="porte" from="Door5" to="Door5" method="_on_porte"]

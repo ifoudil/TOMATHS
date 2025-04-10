@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var target_scene = "res://menu_notion.tscn"
+@onready var player = $AudioStreamPlayer2D
+
 signal porte
 
 @onready var sprite = $AnimatedSprite2D
@@ -23,6 +25,7 @@ func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("enter") and not animation_played:
 		animation_played = true
 		sprite.play("door_open")
+		player.play()
 		porte.emit()
 		sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 

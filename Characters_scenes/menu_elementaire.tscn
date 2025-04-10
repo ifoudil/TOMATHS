@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://r55hnkmb0xql"]
+[gd_scene load_steps=46 format=3 uid="uid://r55hnkmb0xql"]
 
 [ext_resource type="Texture2D" uid="uid://dosr1owyvjv1l" path="res://Sprites/Tomate-removebg-preview(1).png" id="1_trmoi"]
 [ext_resource type="Script" path="res://Scripts/menu_elementaire.gd" id="1_txk1t"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cnudlc3c21ya3" path="res://Sprites/fond_sauce_tomate_1.png" id="13_fgyts"]
 [ext_resource type="Texture2D" uid="uid://b1i6rwnb3c0pr" path="res://Sprites/fond_sauce_tomate_6.png" id="14_xaphk"]
 [ext_resource type="FontFile" uid="uid://542xk7pormbc" path="res://Ajouts/Tuto TOMATHS/externalFiles/PlanetMonsterDemoRegular.ttf" id="15_3lr1p"]
+[ext_resource type="AudioStream" uid="uid://dcu71exfito2f" path="res://Sprites/audio/Tomaths_menu.mp3" id="16_6y7hj"]
+[ext_resource type="AudioStream" uid="uid://hjl2qopk1073" path="res://Sprites/audio/splash.mp3" id="17_ffvv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gyix"]
 size = Vector2(1549, 18)
@@ -470,5 +472,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("15_3lr1p")
 theme_override_font_sizes/font_size = 30
 text = "Reprendre"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_6y7hj")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_ffvv6")
 
 [connection signal="pressed" from="Pause/Tuto" to="." method="_on_tuto_pressed"]
