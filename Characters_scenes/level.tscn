@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://biemwy7e1t814"]
+[gd_scene load_steps=28 format=3 uid="uid://biemwy7e1t814"]
 
 [ext_resource type="PackedScene" uid="uid://dgwnun0memswe" path="res://Characters_scenes/player.tscn" id="1_f5uhv"]
 [ext_resource type="PackedScene" uid="uid://dfcygstgntw6g" path="res://Characters_scenes/door.tscn" id="2_7rllr"]
 [ext_resource type="Texture2D" uid="uid://b8rqaerl0vwdt" path="res://Sprites/fond_pixel_champs.png" id="3_4bvgt"]
 [ext_resource type="FontFile" uid="uid://b0b3ahm2x6ge3" path="res://Sprites/PlanetMonsterDemoRegular.ttf" id="3_kors4"]
 [ext_resource type="AudioStream" uid="uid://dcu71exfito2f" path="res://Sprites/audio/Tomaths_menu.mp3" id="5_hkdfy"]
+[ext_resource type="FontFile" uid="uid://542xk7pormbc" path="res://Ajouts/Tuto TOMATHS/externalFiles/PlanetMonsterDemoRegular.ttf" id="6_htigy"]
 
 [sub_resource type="GDScript" id="GDScript_xh6iv"]
 script/source = "extends Node
@@ -17,6 +18,31 @@ func _ready():
 
 func _on_music_finished():
 	menu.play() 
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"pause\"):
+		toggle_pause()
+
+func toggle_pause():
+	%Pause.visible = !%Pause.visible
+	get_tree().paused = !get_tree().paused
+	
+func _on_sortir_pressed():
+	get_tree().paused = false
+	var accueil = preload(\"res://Characters_scenes/tomaths_main_page.tscn\")
+	get_tree().change_scene_to_packed(accueil)
+
+func _on_reprendre_pressed():
+	toggle_pause()
+
+func _on_tuto_pressed():
+	var html_path = \"res://Ajouts/TUTO TOMATHS/index.html\"  # Le chemin relatif dans ton projet Godot	
+	# Convertir en chemin absolu
+	var absolute_path = ProjectSettings.globalize_path(html_path)
+	# Ajouter 'file://' pour que ce soit un chemin compréhensible par le navigateur
+	var file_url = \"file://\" + absolute_path
+	# Ouvrir le fichier dans le navigateur
+	OS.shell_open(file_url)
 "
 
 [sub_resource type="Gradient" id="Gradient_bw35e"]
@@ -530,4 +556,68 @@ texture = ExtResource("3_4bvgt")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_hkdfy")
 
+[node name="Pause" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.486275)
+
+[node name="Tuto" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -47.5
+offset_right = 270.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_htigy")
+theme_override_font_sizes/font_size = 31
+text = "Apprendre a jouer"
+
+[node name="Sortir" type="Button" parent="Pause"]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -251.0
+offset_right = 270.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_htigy")
+theme_override_font_sizes/font_size = 31
+text = "Accueil"
+
+[node name="Reprendre" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -169.0
+offset_right = 269.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_htigy")
+theme_override_font_sizes/font_size = 30
+text = "Reprendre"
+
 [connection signal="porte" from="Door5" to="Door5" method="_on_porte"]
+[connection signal="pressed" from="Pause/Tuto" to="." method="_on_tuto_pressed"]
+[connection signal="pressed" from="Pause/Sortir" to="." method="_on_sortir_pressed"]
+[connection signal="pressed" from="Pause/Reprendre" to="." method="_on_reprendre_pressed"]
