@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bplqt03oiigma" path="res://Sprites/tomateOvale.png" id="5_bgbss"]
 [ext_resource type="Texture2D" uid="uid://cdnj2hahfg1pd" path="res://Sprites/grappetomates.png" id="6_31jm2"]
 [ext_resource type="PackedScene" uid="uid://dfcygstgntw6g" path="res://Characters_scenes/door.tscn" id="7_r4ox1"]
-[ext_resource type="PackedScene" uid="uid://bja0h21n7phdm" path="res://Characters_scenes/player.tscn" id="8_wj80f"]
+[ext_resource type="PackedScene" uid="uid://dgwnun0memswe" path="res://Characters_scenes/player.tscn" id="8_wj80f"]
 [ext_resource type="Texture2D" uid="uid://c16bbrlfjbjgm" path="res://Sprites/vide.png" id="9_15hlr"]
 [ext_resource type="Texture2D" uid="uid://dkjfwuu8wnki5" path="res://Sprites/fond_sauce_tomate_4.png" id="10_7vj0m"]
 [ext_resource type="Texture2D" uid="uid://vd8xglhfhsjd" path="res://Sprites/fond_sauce_tomate_3.png" id="11_qry8p"]
@@ -318,7 +318,7 @@ offset_left = -79271.4
 offset_top = -41780.2
 offset_right = -79052.4
 offset_bottom = -41733.2
-text = "Nombre Relatif
+text = "Nombres Relatifs
 "
 label_settings = SubResource("LabelSettings_3th45")
 
@@ -341,7 +341,7 @@ offset_left = -107626.0
 offset_top = -41783.2
 offset_right = -107477.0
 offset_bottom = -41736.2
-text = "Equation"
+text = "Equations"
 label_settings = SubResource("LabelSettings_cv2qg")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
@@ -363,7 +363,7 @@ offset_left = -145764.0
 offset_top = -43852.0
 offset_right = -145686.0
 offset_bottom = -43805.0
-text = "Carre"
+text = "Carres"
 label_settings = SubResource("LabelSettings_cnoi1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
