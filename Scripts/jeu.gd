@@ -4,6 +4,8 @@ const OBJET_ENNEMI = preload("res://Characters_scenes/ennemi.tscn")
 const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
 const MENU_PRINCIPAL = preload("res://Characters_scenes/level.tscn")
 
+@onready var splash = $AudioStreamPlayer2D
+
 
 
 var tabEnnemis = {} # Enregistre tous les ennemis pour faciliter la réinitialisation
@@ -64,6 +66,7 @@ func _on_tomate_main_tomate_mort():
 	%ScoreFinal.text = str(round(Global.score))
 	get_tree().paused = true
 	$GameOver/AnimationPlayer.play("game_over")
+	splash.play()
 
 
 func _on_button_pressed():

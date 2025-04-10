@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_PV = 50 #nombre de points de vie de la tomate
+const MAX_PV = 5 #nombre de points de vie de la tomate
 var vie = MAX_PV 
 
 signal tomate_mort

@@ -11,6 +11,9 @@ signal play
 @onready var area_addition = $Area2DAddi
 @onready var area_soustraction = $Area2DSous
 @onready var area_multiplication = $Area2DMult
+@onready var player = $AudioStreamPlayer2D
+@onready var splash = $AudioStreamPlayer2D2
+
 
 # Précharge des scènes à charger
 var scene_addition = preload("res://jeu.tscn")
@@ -27,6 +30,7 @@ var target_scene = null
 var target_sprite: AnimatedSprite2D = null
 var animation_played = false
 
+
 func _ready():
 	# Connexions pour chaque zone
 	area_addition.body_entered.connect(_on_entered_addition)
@@ -37,6 +41,12 @@ func _ready():
 
 	area_multiplication.body_entered.connect(_on_entered_multiplication)
 	area_multiplication.body_exited.connect(_on_exited_multiplication)
+	
+	player.play()
+	player.connect("finished", Callable(self, "_on_music_finished"))
+	
+func _on_music_finished():
+	player.play()  
 
 # Fonctions d’entrée/sortie
 func _on_entered_addition(body):
@@ -75,6 +85,7 @@ func _process(delta):
 		elif player_in_multiplication:
 			Global.questionsChemin="res://Questions/Primaire/tablesMultiplication.txt"
 			_start_transition(scene_multiplication, sprite_multiplication)
+		splash.play()
 	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()

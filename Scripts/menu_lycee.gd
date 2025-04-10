@@ -9,6 +9,8 @@ signal play
 @onready var area_derivee = $Area2DDerivee
 @onready var area_secdeg = $Area2DSecDeg
 @onready var area_discriminant = $Area2DDiscriminant
+@onready var player = $AudioStreamPlayer2D
+@onready var splash = $AudioStreamPlayer2D2
 
 # Précharge toutes les scènes ciblées
 var scene_derivee = preload("res://jeu.tscn")
@@ -34,6 +36,12 @@ func _ready():
 
 	area_discriminant.body_entered.connect(_on_entered_discriminant)
 	area_discriminant.body_exited.connect(_on_exited_discriminant)
+	
+	player.play()
+	player.connect("finished", Callable(self, "_on_music_finished"))
+	
+func _on_music_finished():
+	player.play()  
 
 # Fonctions pour détecter la présence du joueur dans chaque zone
 func _on_entered_derivee(body):
@@ -72,7 +80,7 @@ func _process(delta):
 		elif player_in_discriminant:
 			Global.questionsChemin="res://Questions/Lycee/delta.txt"
 			_start_transition(scene_discriminant, sprite3)
-			
+		splash.play()	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 
