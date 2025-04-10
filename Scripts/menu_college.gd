@@ -101,7 +101,6 @@ func _process(delta):
 		elif player_in_carre:
 			Global.questionsChemin="res://Questions/College/carres.txt"
 			_start_transition(scene_carre, sprite_carre)
-		splash.play()
 	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
@@ -112,6 +111,7 @@ func _start_transition(scene, sprite):
 	target_scene = scene
 	target_sprite = sprite
 	target_sprite.play("splash")
+	splash.play()
 	play.emit()
 
 	if not target_sprite.is_connected("animation_finished", Callable(self, "_on_animation_finished")):

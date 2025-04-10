@@ -84,7 +84,7 @@ func _process(delta):
 		elif player_in_dlzero:
 			Global.questionsChemin="res://Questions/Superieur/binaire.txt"
 			_start_transition(scene_dlzero, sprite_dlzero)
-		splash.play()	
+
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 
@@ -94,6 +94,7 @@ func _start_transition(scene, sprite):
 	target_scene = scene
 	target_sprite = sprite
 	target_sprite.play("splash")
+	splash.play()
 	play.emit()
 
 	# Connecte l'événement de fin d'animation s’il n’est pas déjà connecté
