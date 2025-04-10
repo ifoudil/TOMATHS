@@ -2,6 +2,7 @@ extends Node2D
 
 const OBJET_ENNEMI = preload("res://Characters_scenes/ennemi.tscn")
 const BULLET_OBJECT = preload("res://Characters_scenes/balle.tscn")
+const MENU_PRINCIPAL = preload("res://Characters_scenes/level.tscn")
 
 
 
@@ -98,7 +99,8 @@ func recommencer():
 	
 
 func _on_sortir_pressed():
-	get_tree().quit() # à changer pour ramener au menu principal une fois que ça sera lié
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(MENU_PRINCIPAL)
 
 func toggle_pause():
 	%Pause.visible = !%Pause.visible
