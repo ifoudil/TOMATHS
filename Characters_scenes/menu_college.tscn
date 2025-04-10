@@ -417,6 +417,7 @@ scale = Vector2(1.26315, 27.1799)
 texture = SubResource("GradientTexture1D_ly0qw")
 
 [node name="DoorRetour" parent="." instance=ExtResource("7_r4ox1")]
+process_mode = 1
 z_index = 0
 position = Vector2(47, 351)
 

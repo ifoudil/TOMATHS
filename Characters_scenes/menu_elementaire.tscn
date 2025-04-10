@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://r55hnkmb0xql"]
+[gd_scene load_steps=44 format=3 uid="uid://r55hnkmb0xql"]
 
 [ext_resource type="Texture2D" uid="uid://dosr1owyvjv1l" path="res://Sprites/Tomate-removebg-preview(1).png" id="1_trmoi"]
 [ext_resource type="Script" path="res://Scripts/menu_elementaire.gd" id="1_txk1t"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chmr5g0ml0gxq" path="res://Sprites/fond_sauce_tomate_5.png" id="12_pfth4"]
 [ext_resource type="Texture2D" uid="uid://cnudlc3c21ya3" path="res://Sprites/fond_sauce_tomate_1.png" id="13_fgyts"]
 [ext_resource type="Texture2D" uid="uid://b1i6rwnb3c0pr" path="res://Sprites/fond_sauce_tomate_6.png" id="14_xaphk"]
+[ext_resource type="FontFile" uid="uid://542xk7pormbc" path="res://Ajouts/Tuto TOMATHS/externalFiles/PlanetMonsterDemoRegular.ttf" id="15_3lr1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gyix"]
 size = Vector2(1549, 18)
@@ -194,6 +195,7 @@ size = Vector2(115.5, 106)
 size = Vector2(76, 111)
 
 [node name="Menu_Elementaire" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,10 +245,12 @@ scale = Vector2(6.08594, 27.5)
 texture = SubResource("GradientTexture1D_qp51x")
 
 [node name="DoorRetour" parent="." instance=ExtResource("3_pj5qx")]
+process_mode = 1
 z_index = 0
 position = Vector2(47, 351)
 
 [node name="Player" parent="." instance=ExtResource("4_i0hj4")]
+process_mode = 1
 z_index = 1
 position = Vector2(122, 359)
 
@@ -280,6 +284,7 @@ texture = SubResource("GradientTexture1D_258y3")
 
 [node name="DeriveeAnim" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+process_mode = 1
 position = Vector2(407.651, 348.75)
 scale = Vector2(1.10286, 1.33125)
 sprite_frames = SubResource("SpriteFrames_ep5b2")
@@ -304,6 +309,7 @@ text = "Addition
 label_settings = SubResource("LabelSettings_kl3wb")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 position = Vector2(771.75, 348)
 scale = Vector2(1.20625, 1.3)
 sprite_frames = SubResource("SpriteFrames_dmyu8")
@@ -327,6 +333,7 @@ text = "Soustraction"
 label_settings = SubResource("LabelSettings_g7jto")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 position = Vector2(1194.5, 346)
 scale = Vector2(1.60274, 1.96078)
 sprite_frames = SubResource("SpriteFrames_dhjop")
@@ -351,6 +358,7 @@ text = "Multiplication
 label_settings = SubResource("LabelSettings_klmlo")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 z_index = 2
 position = Vector2(403, 348)
 scale = Vector2(0.75, 0.697917)
@@ -385,6 +393,7 @@ position = Vector2(1181, 334.5)
 shape = SubResource("RectangleShape2D_ydg3q")
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 z_index = 2
 position = Vector2(773, 358)
 scale = Vector2(0.75, 0.697917)
@@ -393,9 +402,73 @@ animation = &"splash"
 frame_progress = 0.80377
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 z_index = 2
 position = Vector2(1180, 359)
 scale = Vector2(0.75, 0.697917)
 sprite_frames = SubResource("SpriteFrames_bs0so")
 animation = &"splash"
 frame_progress = 0.80377
+
+[node name="Pause" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.486275)
+
+[node name="Tuto" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -47.5
+offset_right = 270.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_3lr1p")
+theme_override_font_sizes/font_size = 31
+text = "Apprendre a jouer"
+
+[node name="Sortir" type="Button" parent="Pause"]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -251.0
+offset_right = 270.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_3lr1p")
+theme_override_font_sizes/font_size = 31
+text = "Retour au menu principal"
+
+[node name="Reprendre" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -169.0
+offset_right = 269.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_3lr1p")
+theme_override_font_sizes/font_size = 30
+text = "Reprendre"
+
+[connection signal="pressed" from="Pause/Tuto" to="." method="_on_tuto_pressed"]

@@ -75,6 +75,9 @@ func _process(delta):
 		elif player_in_multiplication:
 			Global.questionsChemin="res://Questions/Primaire/tablesMultiplication.txt"
 			_start_transition(scene_multiplication, sprite_multiplication)
+	
+	if Input.is_action_just_pressed("pause"):
+		toggle_pause()
 
 # Lance animation + scène
 func _start_transition(scene, sprite):
@@ -90,3 +93,27 @@ func _start_transition(scene, sprite):
 # Changement de scène une fois l'animation finie
 func _on_animation_finished():
 	get_tree().change_scene_to_packed(target_scene)
+
+
+# === Tout ce qui est en rapport avec le menu pause  ===
+
+func toggle_pause():
+	%Pause.visible = !%Pause.visible
+	get_tree().paused = !get_tree().paused
+	
+func _on_sortir_pressed():
+	get_tree().paused = false
+	var menu_principal = preload("res://Characters_scenes/level.tscn")
+	get_tree().change_scene_to_packed(menu_principal)
+
+func _on_reprendre_pressed():
+	toggle_pause()
+
+func _on_tuto_pressed():
+	var html_path = "res://Ajouts/TUTO TOMATHS/index.html"  # Le chemin relatif dans ton projet Godot	
+	# Convertir en chemin absolu
+	var absolute_path = ProjectSettings.globalize_path(html_path)
+	# Ajouter 'file://' pour que ce soit un chemin compréhensible par le navigateur
+	var file_url = "file://" + absolute_path
+	# Ouvrir le fichier dans le navigateur
+	OS.shell_open(file_url)
