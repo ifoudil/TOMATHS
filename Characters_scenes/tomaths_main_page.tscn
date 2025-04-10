@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dbu66qjpxqpl0"]
+[gd_scene load_steps=28 format=3 uid="uid://dbu66qjpxqpl0"]
 
 [ext_resource type="Texture2D" uid="uid://boeq7ifk17b5p" path="res://Sprites/Coulis_img/img1-removebg-preview(1).png" id="1_h6kqc"]
 [ext_resource type="Script" path="res://Scripts/tomaths_main_page.gd" id="1_qennl"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c0x2dfxbp7o6w" path="res://Sprites/exit_button.png" id="11_cjvmp"]
 [ext_resource type="Texture2D" uid="uid://bjo2dq5uw7ekm" path="res://Sprites/start_button.png" id="12_lijjt"]
 [ext_resource type="Texture2D" uid="uid://b7obeuvr5imfo" path="res://Sprites/tomaths_with_tomatoe.png" id="13_cdmo7"]
+[ext_resource type="AudioStream" uid="uid://i28el6pgvpo0" path="res://Sprites/audio/Tomaths_start.mp3" id="14_mtvcy"]
+[ext_resource type="AudioStream" uid="uid://hjl2qopk1073" path="res://Sprites/audio/splash.mp3" id="15_wtfyw"]
 
 [sub_resource type="Animation" id="Animation_yoqor"]
 resource_name = "coulis"
@@ -97,6 +99,7 @@ grow_vertical = 2
 color = Color(1, 0.843137, 0.556863, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(505, 37)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_h6kqc")
@@ -153,6 +156,13 @@ offset_right = 1142.0
 offset_bottom = 735.0
 mouse_filter = 2
 texture = ExtResource("13_cdmo7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_mtvcy")
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_wtfyw")
 
 [connection signal="button_down" from="ExitBtn" to="." method="_on_exit_btn_button_down"]
 [connection signal="button_down" from="StartBtn" to="." method="_on_start_btn_button_down"]
