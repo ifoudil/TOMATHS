@@ -167,7 +167,7 @@ gradient = SubResource("Gradient_hyoxr")
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5qpu"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.9,
 "texture": ExtResource("9_r7v6b")
 }, {
 "duration": 1.0,
@@ -187,7 +187,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"splash",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rl74s"]
