@@ -133,6 +133,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Level" type="Node2D"]
+process_mode = 3
 script = SubResource("GDScript_xh6iv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -253,9 +254,11 @@ position = Vector2(-5.5, 6)
 shape = SubResource("RectangleShape2D_xsycb")
 
 [node name="Player" parent="." instance=ExtResource("1_f5uhv")]
+process_mode = 1
 position = Vector2(-50, 106)
 
 [node name="Door" parent="." instance=ExtResource("2_7rllr")]
+process_mode = 1
 position = Vector2(440, 333)
 target_scene = "res://Characters_scenes/menu_college.tscn"
 
@@ -268,6 +271,7 @@ text = "College"
 label_settings = SubResource("LabelSettings_v1tih")
 
 [node name="Door3" parent="." instance=ExtResource("2_7rllr")]
+process_mode = 1
 position = Vector2(259, 251)
 target_scene = "res://Characters_scenes/menu_elementaire.tscn"
 
@@ -280,6 +284,7 @@ text = "Elementaire"
 label_settings = SubResource("LabelSettings_eacip")
 
 [node name="Door2" parent="." instance=ExtResource("2_7rllr")]
+process_mode = 1
 position = Vector2(631, 414)
 target_scene = "res://Characters_scenes/menu_lycee.tscn"
 
@@ -331,6 +336,7 @@ position = Vector2(-5.5, 6)
 shape = SubResource("RectangleShape2D_xsycb")
 
 [node name="Door4" parent="." instance=ExtResource("2_7rllr")]
+process_mode = 1
 position = Vector2(977, 498)
 target_scene = "res://Characters_scenes/menu_superieur.tscn"
 
@@ -526,6 +532,7 @@ scale = Vector2(1.09766, 16)
 texture = SubResource("GradientTexture1D_2bo0a")
 
 [node name="Door5" parent="." instance=ExtResource("2_7rllr")]
+process_mode = 1
 position = Vector2(-295, 168)
 
 [node name="Tuto" type="Label" parent="Door5"]
