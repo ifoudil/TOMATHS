@@ -10,6 +10,9 @@ const MENU_PRINCIPAL = preload("res://Characters_scenes/level.tscn")
 
 var tabEnnemis = {} # Enregistre tous les ennemis pour faciliter la réinitialisation
 
+func _ready():
+	recommencer()
+
 func _physics_process(delta):
 	if not get_tree().paused :
 		var reponse = %EncadreReponse.getText()
