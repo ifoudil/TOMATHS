@@ -82,7 +82,7 @@ func _process(delta):
 			Global.questionsChemin="res://Questions/Superieur/binaire.txt"
 			_start_transition(scene_binaire_avancee, sprite_binaire_avancee)
 		elif player_in_dlzero:
-			Global.questionsChemin="res://Questions/Superieur/binaire.txt"
+			Global.questionsChemin="res://Questions/Superieur/DL.txt"
 			_start_transition(scene_dlzero, sprite_dlzero)
 
 	if Input.is_action_just_pressed("pause"):
