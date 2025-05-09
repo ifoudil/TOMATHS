@@ -1,5 +1,5 @@
 # TOMATHS</h1>
-![Tomaths Banner](./Sprites/Tomaths_Banner.png)
+![Tomaths Logo](./Sprites/Tomate-removebg-preview.png)
 
 Godot game for learning math
 
