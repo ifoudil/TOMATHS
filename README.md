@@ -1,4 +1,3 @@
-<img src="images/icon.png" width="80"/>
 <table>
   <tr>
     <td><h1>TOMATHS</h1></td>
