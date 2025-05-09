@@ -5,3 +5,10 @@
   </tr>
 </table>
 Godot game for learning math
+
+<p align="left">
+  <img src="./Sprites/Tomate-removebg-preview.png" alt="Tomaths Logo" width="40"/>
+</p>
+
+# TOMATHS
+
